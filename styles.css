@@ -1,4 +1,4 @@
-/* Базовые стили */
+/* Общие настройки */
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +6,18 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
+    scroll-behavior: smooth;
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 a {
@@ -24,11 +25,21 @@ a {
     color: inherit;
 }
 
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
 /* Header */
 .header {
-    background: #111;
-    color: #fff;
+    background-color: #000;
+    color: white;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .header__wrapper {
@@ -36,92 +47,169 @@ a {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0.8rem 0;
+    /* Можно чуть увеличить внутренний отступ */
 }
 
+/* Логотип */
 .logo {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: bold;
-    color: #f0c040;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #f0f0f0, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
 }
 
-.logo span {
-    color: #e91e63;
+.logo:hover {
+    transform: scale(1.05);
 }
 
+/* Меню */
 .nav__list {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     list-style: none;
 }
 
 .nav__link {
     color: #fff;
-    transition: color 0.3s;
+    font-weight: 500;
+    position: relative;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #e0e0e0, #555);
+    transition: width 0.3s ease;
+}
+
+.nav__link:hover::after {
+    width: 100%;
 }
 
 .nav__link:hover {
-    color: #f0c040;
+    color: #f0f0f0;
+}
+
+/* Контакты */
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
 }
 
 .contacts__phone {
-    color: #fff;
     font-weight: bold;
-    margin-right: 1rem;
+    color: #b0b0b0;
+    transition: color 0.3s ease;
+}
+
+.contacts__phone:hover {
+    color: #f0f0f0;
 }
 
 .social__link {
     margin-left: 10px;
-    color: #fff;
+    color: #999;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.social__link:hover {
+    color: #e0e0e0;
 }
 
 /* Hero Section */
 .hero {
-    background: url("images/moto.jpg") no-repeat center center/cover;
+    background: url('images/A2-Moto.jpg') no-repeat center center/cover;
     color: white;
-    padding: 100px 0;
+    padding: 120px 0;
     text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
 }
 
 .hero__title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .hero__subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
+    animation: fadeInUp 1.2s ease-in-out;
 }
 
 .btn {
-    padding: 12px 24px;
-    background: #e91e63;
+    padding: 14px 28px;
+    background: transparent;
     color: #fff;
-    border-radius: 5px;
+    border: 2px solid #fff;
+    border-radius: 30px;
     font-size: 1rem;
-    transition: background 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: #c2185b;
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
 }
 
 /* About Section */
 .section-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    color: #000;
 }
 
-.section-title span {
-    color: #e91e63;
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #000;
 }
 
 .about__text {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 .text__collage {
@@ -130,34 +218,62 @@ a {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
 .text__block__collage {
-    background: #f0f0f0;
+    background: #f9f9f9;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     flex: 1 1 250px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.text__block__collage:hover {
+    transform: translateY(-5px);
 }
 
 /* Services Section */
+.services {
+    background: #fafafa;
+}
+
 .services__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .service {
-    flex: 1 1 250px;
-    background: #f8f8f8;
-    padding: 1.5rem;
-    border-radius: 5px;
+    flex: 1 1 280px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
     text-align: center;
+    border: 1px solid #ddd;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .service__title {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.service__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
 }
 
 /* Contacts Section */
@@ -168,28 +284,305 @@ a {
 
 .contacts__info {
     margin-bottom: 2rem;
+    font-size: 1rem;
 }
 
 iframe {
     width: 100%;
     height: 300px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
 .footer {
-    background: #111;
+    background: #000;
     color: #aaa;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     text-align: center;
+}
+
+.footer__text {
+    font-size: 0.95rem;
+}
+
+/* Карточки преимуществ */
+.text__collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    flex: 1 1 280px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    border: 1px solid #eee;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #000;
+    /* Было: #e91e63 */
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    color: #333;
+    /* Было: #c2185b */
+}
+
+.feature-card:hover .feature-icon {
+    color: #c2185b;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #000;
+}
+
+.feature-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Карточки услуг */
+.services__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.service-card {
+    flex: 1 1 280px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #000;
+    /* Чёрный цвет иконок */
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #333;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #000;
+}
+
+.service-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Круглый фон под иконки */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f0f0;
+    /* Светло-серый фон */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.icon-wrapper:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #333;
+}
+
+/* Карточки услуг */
+.services__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    /* Увеличили расстояние между карточками */
+    justify-content: center;
+    margin-top: 3rem;
+    /* Больше верхнего отступа */
+}
+
+.service-card {
+    flex: 1 1 280px;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Круглый градиентный фон под иконки */
+.icon-wrapper {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+    /* Градиент вместо серого */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+}
+
+.icon-wrapper:hover {
+    background: linear-gradient(135deg, #e0e0e0, #cfcfcf);
+    transform: scale(1.1);
+}
+
+.service-icon {
+    font-size: 2.8rem;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #333;
+}
+
+.service-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.service-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.logo {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: transparent;
+    background: linear-gradient(to right, #f0f0f0, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.superscript {
+    font-size: 0.6em;
+    /* Уменьшаем размер "2" */
+    vertical-align: super;
+    /* Поднимаем её вверх */
+    margin-left: -0.1em;
+    /* Немного подтягиваем к букве */
+    color: #e91e63;
+    /* Акцентный цвет для цифры */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo:hover .superscript {
+    color: #c2185b;
+}
+
+.logo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: transparent;
+    background: linear-gradient(to right, #f0f0f0, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.superscript {
+    font-size: 0.6em;
+    /* Уменьшаем размер "2" */
+    vertical-align: super;
+    /* Поднимаем её вверх */
+    margin-left: -0.1em;
+    /* Немного подтягиваем к букве */
+    color: #e91e63;
+    /* Акцентный цвет для цифры */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo:hover .superscript {
+    color: #c2185b;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .nav__list {
         flex-direction: column;
-        background: #111;
+        background: #000;
         position: absolute;
         top: 60px;
         left: 0;
@@ -203,11 +596,32 @@ iframe {
 
     .nav__link {
         padding: 10px;
+        text-align: center;
     }
 
     .contacts {
-        flex-direction: column;
         align-items: flex-start;
         margin-top: 10px;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

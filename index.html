@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A2-Moto — Профессиональный мотосервис в Екатеринбурге | Ремонт и обслуживание мотоциклов</title>
-    <meta name="description" content="Мотосервис A2-Moto в Екатеринбурге. Качественный ремонт, техобслуживание и диагностика мотоциклов. Быстро, надежно, с гарантией. Запишитесь прямо сейчас!">
+    <meta name="description"
+        content="Мотосервис A2-Moto в Екатеринбурге. Качественный ремонт, техобслуживание и диагностика мотоциклов. Быстро, надежно, с гарантией. Запишитесь прямо сейчас!">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono :wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
+
     <!-- Шапка -->
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
-                <a href="#" class="logo"> moto<span>service</span></a>
+                <a href="#" class="logo">A<span class="superscript">2</span> Moto</a>
                 <nav class="nav">
                     <ul class="nav__list">
                         <li><a href="#home" class="nav__link">Главная</a></li>
@@ -24,8 +34,8 @@
                 <div class="contacts">
                     <a href="tel:+79991234567" class="contacts__phone">+7 (999) 123-45-67</a>
                     <div class="social">
-                        <a href="https://vk.com" target="_blank" class="social__link">VK</a>
-                        <a href="https://instagram.com" target="_blank" class="social__link">Instagram</a>
+                        <a href="https://vk.com " target="_blank" class="social__link">VK</a>
+                        <a href="https://instagram.com " target="_blank" class="social__link">Instagram</a>
                     </div>
                 </div>
             </div>
@@ -44,20 +54,27 @@
     <!-- О нас -->
     <section id="about" class="about">
         <div class="text__collage">
-            <div class="text__block__collage">
-                Мы красивые
+            <div class="feature-card" data-scroll>
+                <i class="fas fa-user-cog feature-icon"></i>
+                <h3 class="feature-title">Опытные мастера</h3>
+                <p class="feature-text">Наши специалисты имеют многолетний опыт в ремонте мотоциклов.</p>
             </div>
-            <div class="text__block__collage">
-                У нас есть мотоциклы
+            <div class="feature-card" data-scroll>
+                <i class="fas fa-toolbox feature-icon"></i>
+                <h3 class="feature-title">Современное оборудование</h3>
+                <p class="feature-text">Мы используем профессиональные инструменты и технологии.</p>
             </div>
-            <div class="text__block__collage">
-                А у тебя сломался мотоцикл
+            <div class="feature-card" data-scroll>
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3 class="feature-title">Гарантия на все работы</h3>
+                <p class="feature-text">Даём гарантию на выполненные работы — вы можете быть уверены в результате.</p>
             </div>
         </div>
         <div class="container">
-            <h2 class="section-title">Почему <span>мы?</span></h2>
+            <h2 class="section-title">Почему <span>A2-Moto?</span></h2>
             <p class="about__text">
-                <strong>moto<span>service</span></strong> — команда профессионалов с многолетним опытом в ремонте и обслуживании мотоциклов. 
+                <strong>A2-Moto</strong> — команда профессионалов с многолетним опытом в ремонте и обслуживании
+                мотоциклов.
                 Наш сервис оснащен современным оборудованием, что позволяет нам выполнять работы любой сложности.
             </p>
         </div>
@@ -68,17 +85,26 @@
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
             <div class="services__list">
-                <div class="service">
-                    <h3 class="service__title">Диагностика</h3>
-                    <p class="service__description">Полная проверка технического состояния вашего мотоцикла.</p>
+                <div class="service-card" data-scroll>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-microchip service-icon"></i>
+                    </div>
+                    <h3 class="service-title">Диагностика</h3>
+                    <p class="service-description">Полная проверка технического состояния вашего мотоцикла.</p>
                 </div>
-                <div class="service">
-                    <h3 class="service__title">Ремонт двигателя</h3>
-                    <p class="service__description">Восстановление и замена деталей двигателя.</p>
+                <div class="service-card" data-scroll>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-cogs service-icon"></i>
+                    </div>
+                    <h3 class="service-title">Ремонт двигателя</h3>
+                    <p class="service-description">Восстановление и замена деталей двигателя.</p>
                 </div>
-                <div class="service">
-                    <h3 class="service__title">Шиномонтаж</h3>
-                    <p class="service__description">Замена и ремонт шин для вашего мотоцикла.</p>
+                <div class="service-card" data-scroll>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-tools service-icon"></i>
+                    </div>
+                    <h3 class="service-title">Шиномонтаж</h3>
+                    <p class="service-description">Замена и ремонт шин для вашего мотоцикла.</p>
                 </div>
             </div>
         </div>
@@ -89,21 +115,26 @@
         <div class="container">
             <h2 class="section-title">Контакты</h2>
             <div class="contacts__info">
-                <p>Адрес: г. Москва, ул. Моторная, д. 15</p>
+                <p>Адрес: г. Екатеринбург, ул. Моторная, д. 15</p>
                 <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
-                <p>Email: <a href="mailto:info@motorservice.ru">info@motorservice.ru</a></p>
+                <p>Email: <a href="mailto:info@a2-moto.ru">info@a2-moto.ru</a></p>
             </div>
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A15eca0d07c40be15f6abcca14932c09d3f7850b06c23713e732a669347629ee3&amp;source=constructor" width="600" height="400" frameborder="0"></iframe>
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A15eca0d07c40be15f6abcca14932c09d3f7850b06c23713e732a669347629ee3&amp ;source=constructor"
+                width="100%" height="300" frameborder="0"></iframe>
         </div>
     </section>
 
     <!-- Подвал -->
     <footer class="footer">
         <div class="container">
-            <p class="footer__text">&copy; 2025 MotoService. Все права защищены.</p>
+            <p class="footer__text">&copy; 2025 A2-Moto. Все права защищены.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal "></script>
 </body>
+
 </html>
