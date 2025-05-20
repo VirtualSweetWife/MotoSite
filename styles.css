@@ -134,7 +134,7 @@ h3 {
 
 /* Hero Section */
 .hero {
-    background: url('images/A2-Moto.jpg') no-repeat center center/cover;
+    background: url('images/moto3.jpg') no-repeat center center/cover;
     color: white;
     padding: 120px 0;
     text-align: center;
@@ -578,8 +578,70 @@ iframe {
     color: #c2185b;
 }
 
-/* Адаптивность */
+/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+        /* Меньшие отступы */
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+        /* Уменьшаем заголовок */
+    }
+
+    .hero__subtitle {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        /* Уменьшаем кнопку */
+    }
+
+    .feature-card,
+    .service-card {
+        flex-basis: 100%;
+        /* Каждая карточка занимает всю ширину */
+        margin-bottom: 1.5rem;
+    }
+
+    .contacts__info {
+        font-size: 0.9rem;
+        /* Уменьшаем текст контактов */
+    }
+
+    iframe {
+        height: 200px;
+        /* Уменьшаем высоту карты */
+    }
+}
+
+/* Бургер-меню */
+.burger {
+    display: none;
+    /* По умолчанию скрыто */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    /* Меню */
     .nav__list {
         flex-direction: column;
         background: #000;
@@ -588,40 +650,23 @@ iframe {
         left: 0;
         width: 100%;
         display: none;
+        z-index: 999;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        /* Добавляем анимацию */
+        transform: translateY(-10px);
+        /* Немного смещаем вверх */
     }
 
     .nav__list.active {
         display: flex;
-    }
-
-    .nav__link {
-        padding: 10px;
-        text-align: center;
-    }
-
-    .contacts {
-        align-items: flex-start;
-        margin-top: 10px;
-    }
-
-    .hero__title {
-        font-size: 2.2rem;
-    }
-
-    .hero__subtitle {
-        font-size: 1rem;
-    }
-}
-
-/* Анимация появления */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
         transform: translateY(0);
+        /* Возвращаем в исходное положение */
+        opacity: 1;
+    }
+
+    .nav__list.hidden {
+        opacity: 0;
+        pointer-events: none;
+        /* Не реагирует на клики */
     }
 }

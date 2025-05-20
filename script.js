@@ -1,3 +1,42 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector('.burger');
+    const navList = document.querySelector('.nav__list');
+
+    if (!burger || !navList) return;
+
+    let isMenuOpen = false;
+
+    // Открытие/закрытие меню
+    burger.addEventListener('click', function () {
+        if (!isMenuOpen) {
+            navList.classList.add('active');
+            navList.classList.remove('hidden');
+            isMenuOpen = true;
+        } else {
+            navList.classList.add('hidden');
+            setTimeout(() => {
+                navList.classList.remove('active');
+                isMenuOpen = false;
+            }, 300);
+        }
+    });
+
+    // Закрытие меню при клике на ссылку
+    const menuLinks = document.querySelectorAll('.nav__link');
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            if (isMenuOpen) {
+                navList.classList.add('hidden');
+                setTimeout(() => {
+                    navList.classList.remove('active');
+                    isMenuOpen = false;
+                }, 300);
+            }
+        });
+    });
+});
+
 // Плавная прокрутка к якорям
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
