@@ -20,3 +20,16 @@ document.querySelectorAll('.btn').forEach(anchor => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navList = document.querySelector('.nav__list');
+    const burger = document.createElement('button');
+    burger.textContent = '☰';
+    burger.classList.add('burger');
+
+    document.querySelector('.nav').prepend(burger);
+
+    burger.addEventListener('click', function () {
+        navList.classList.toggle('active');
+    });
+});
