@@ -79,10 +79,11 @@ body {
 }
 
 .hero {
+    height: 90%;
     background: url('images/moto.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
-    padding: 10rem 0;
+    padding: 16.5%;
 }
 
 .hero__title {
@@ -117,6 +118,38 @@ body {
 
 .about, .services, .contacts-section {
     padding: 4rem 0;
+}
+
+.about {
+    display: flex;
+}
+
+.about span {
+    color: #ff6f61;
+}
+
+.text__collage {
+    display: flex;
+    width: 50%;
+    height: 300px;
+}
+
+.text__block__collage {
+    width: 10%px;
+    height: 250px;
+    background-color: #ff6f61;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.text__block__collage:hover {
+    background-color: #e05c50;
 }
 
 .services__list {
